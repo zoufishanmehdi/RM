@@ -22,6 +22,9 @@
 		C70DAB1229CF633500C2A43D /* RMEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70DAB1129CF633500C2A43D /* RMEpisode.swift */; };
 		C70DAB1429CF633C00C2A43D /* RMCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70DAB1329CF633C00C2A43D /* RMCharacter.swift */; };
 		C70DAB1629CF634300C2A43D /* RMLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70DAB1529CF634300C2A43D /* RMLocation.swift */; };
+		C70DAB1829CF714100C2A43D /* RMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70DAB1729CF714100C2A43D /* RMService.swift */; };
+		C70DAB1A29CF716400C2A43D /* RMRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70DAB1929CF716400C2A43D /* RMRequest.swift */; };
+		C70DAB1C29CF716C00C2A43D /* RMEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70DAB1B29CF716C00C2A43D /* RMEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		C70DAB1129CF633500C2A43D /* RMEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMEpisode.swift; sourceTree = "<group>"; };
 		C70DAB1329CF633C00C2A43D /* RMCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacter.swift; sourceTree = "<group>"; };
 		C70DAB1529CF634300C2A43D /* RMLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMLocation.swift; sourceTree = "<group>"; };
+		C70DAB1729CF714100C2A43D /* RMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMService.swift; sourceTree = "<group>"; };
+		C70DAB1929CF716400C2A43D /* RMRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMRequest.swift; sourceTree = "<group>"; };
+		C70DAB1B29CF716C00C2A43D /* RMEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +172,9 @@
 		C70DAB0C29CF625800C2A43D /* APIClient */ = {
 			isa = PBXGroup;
 			children = (
+				C70DAB1729CF714100C2A43D /* RMService.swift */,
+				C70DAB1929CF716400C2A43D /* RMRequest.swift */,
+				C70DAB1B29CF716C00C2A43D /* RMEndpoint.swift */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -348,8 +357,11 @@
 				C70DAB0629CF473000C2A43D /* RMEpisodeViewController.swift in Sources */,
 				C70DAB0829CF473000C2A43D /* RMCharacterViewController.swift in Sources */,
 				C70DAB1429CF633C00C2A43D /* RMCharacter.swift in Sources */,
+				C70DAB1829CF714100C2A43D /* RMService.swift in Sources */,
 				C70DAB1629CF634300C2A43D /* RMLocation.swift in Sources */,
+				C70DAB1C29CF716C00C2A43D /* RMEndpoint.swift in Sources */,
 				C70DAB0029CF46E000C2A43D /* RMTabController.swift in Sources */,
+				C70DAB1A29CF716400C2A43D /* RMRequest.swift in Sources */,
 				C70DAABB29CF38B500C2A43D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
