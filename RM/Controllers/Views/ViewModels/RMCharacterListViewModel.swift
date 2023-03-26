@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class CharacterListViewModel: NSObject {
+final class RMCharacterListViewModel: NSObject {
     
     func fetchCharacters() {
         RMService.shared.execute(.listCharacterRequests, expecting: RMGetAllCharactersResponse.self) { result in
@@ -23,14 +23,17 @@ final class CharacterListViewModel: NSObject {
     }
 }
 
-extension CharacterListViewModel: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension RMCharacterListViewModel: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 20
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .systemGreen
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RMCharacterCollectionViewCell.cellIdentifier, for: indexPath) as? RMCharacterCollectionViewCell else {
+            fatalError("Unsupported cell")
+        }
+        let viewModel = RMCharacterCollectionViewCellViewModel(characterName: "Zee", characterStatus: .alive, characterImageUrl: nil)
+        cell.configure(with: viewModel)
         return cell
     }
     
