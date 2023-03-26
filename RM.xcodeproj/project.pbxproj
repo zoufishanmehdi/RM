@@ -30,6 +30,9 @@
 		C70DAB2229CF74FF00C2A43D /* RMCharacterStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70DAB2129CF74FF00C2A43D /* RMCharacterStatus.swift */; };
 		C70DAB2429CF752B00C2A43D /* RMCharacterGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70DAB2329CF752B00C2A43D /* RMCharacterGender.swift */; };
 		C7EEC22629D0C1FE00F072D4 /* RMGetAllCharactersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EEC22529D0C1FE00F072D4 /* RMGetAllCharactersResponse.swift */; };
+		C7EEC22829D0CF8900F072D4 /* RMCharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EEC22729D0CF8900F072D4 /* RMCharacterListViewModel.swift */; };
+		C7EEC22A29D0CFCF00F072D4 /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EEC22929D0CFCF00F072D4 /* CharacterListView.swift */; };
+		C7EEC22C29D0D2FE00F072D4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EEC22B29D0D2FE00F072D4 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		C70DAB2129CF74FF00C2A43D /* RMCharacterStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterStatus.swift; sourceTree = "<group>"; };
 		C70DAB2329CF752B00C2A43D /* RMCharacterGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterGender.swift; sourceTree = "<group>"; };
 		C7EEC22529D0C1FE00F072D4 /* RMGetAllCharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMGetAllCharactersResponse.swift; sourceTree = "<group>"; };
+		C7EEC22729D0CF8900F072D4 /* RMCharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterListViewModel.swift; sourceTree = "<group>"; };
+		C7EEC22929D0CFCF00F072D4 /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
+		C7EEC22B29D0D2FE00F072D4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +173,7 @@
 		C70DAB0A29CF620400C2A43D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C7EEC22929D0CFCF00F072D4 /* CharacterListView.swift */,
 			);
 			name = Views;
 			path = Controllers/Views;
@@ -205,6 +212,7 @@
 				C70DAABA29CF38B500C2A43D /* SceneDelegate.swift */,
 				C70DAAC129CF38B700C2A43D /* Assets.xcassets */,
 				C70DAAC329CF38B700C2A43D /* LaunchScreen.storyboard */,
+				C7EEC22B29D0D2FE00F072D4 /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -212,6 +220,7 @@
 		C70DAB0F29CF628C00C2A43D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				C7EEC22729D0CF8900F072D4 /* RMCharacterListViewModel.swift */,
 			);
 			name = ViewModels;
 			path = Controllers/Views/ViewModels;
@@ -383,6 +392,7 @@
 			files = (
 				C70DAB1E29CF74E800C2A43D /* RMOrigin.swift in Sources */,
 				C70DAB2029CF74F000C2A43D /* RMSingleLocation.swift in Sources */,
+				C7EEC22A29D0CFCF00F072D4 /* CharacterListView.swift in Sources */,
 				C7EEC22629D0C1FE00F072D4 /* RMGetAllCharactersResponse.swift in Sources */,
 				C70DAB2229CF74FF00C2A43D /* RMCharacterStatus.swift in Sources */,
 				C70DAB2429CF752B00C2A43D /* RMCharacterGender.swift in Sources */,
@@ -393,11 +403,13 @@
 				C70DAB0629CF473000C2A43D /* RMEpisodeViewController.swift in Sources */,
 				C70DAB0829CF473000C2A43D /* RMCharacterViewController.swift in Sources */,
 				C70DAB1429CF633C00C2A43D /* RMCharacter.swift in Sources */,
+				C7EEC22C29D0D2FE00F072D4 /* Extensions.swift in Sources */,
 				C70DAB1829CF714100C2A43D /* RMService.swift in Sources */,
 				C70DAB1629CF634300C2A43D /* RMLocation.swift in Sources */,
 				C70DAB1C29CF716C00C2A43D /* RMEndpoint.swift in Sources */,
 				C70DAB0029CF46E000C2A43D /* RMTabController.swift in Sources */,
 				C70DAB1A29CF716400C2A43D /* RMRequest.swift in Sources */,
+				C7EEC22829D0CF8900F072D4 /* RMCharacterListViewModel.swift in Sources */,
 				C70DAABB29CF38B500C2A43D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
