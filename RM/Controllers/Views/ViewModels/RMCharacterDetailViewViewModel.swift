@@ -11,8 +11,8 @@ final class RMCharacterDetailViewViewModel {
     
     private let character: RMCharacter
     
-    var title: String {
-        return character.name
+    public var title: String {
+        character.name.uppercased()
     }
     
     init(character: RMCharacter) {

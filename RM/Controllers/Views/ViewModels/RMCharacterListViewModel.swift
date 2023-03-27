@@ -28,7 +28,9 @@ final class RMCharacterListViewModel: NSObject {
     
     private var cellViewModels: [RMCharacterCollectionViewCellViewModel] = []
     
-    private var apiInfo: RMGetAllCharactersResponse.Info? = nil 
+    private var apiInfo: RMGetAllCharactersResponse.Info? = nil
+    
+    private var isLoadingMoreCharacters = false
     
     public func fetchCharacters() {
         RMService.shared.execute(.listCharacterRequests, expecting: RMGetAllCharactersResponse.self) { [weak self] result in
@@ -37,6 +39,7 @@ final class RMCharacterListViewModel: NSObject {
                 let results = responseModel.results
                 let info = responseModel.info
                 self?.characters = results
+                self?.apiInfo = info
                 DispatchQueue.main.async {
                     self?.delegate?.didLoadInitialCharacters()
                 }
@@ -47,7 +50,8 @@ final class RMCharacterListViewModel: NSObject {
     }
     
     public func fetchAdditionalCharacters() {
-        
+        isLoadingMoreCharacters = true
+        // Fetch characters 
     }
     
     public var shouldShowLoadMoreIndicator: Bool {
@@ -70,6 +74,21 @@ extension RMCharacterListViewModel: UICollectionViewDataSource, UICollectionView
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard kind == UICollectionView.elementKindSectionFooter, let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: RMFooterLoadingCollectionReusableView.identifier, for: indexPath) as? RMFooterLoadingCollectionReusableView else {
+            fatalError("Unsupported")
+        }
+        footer.startAnimating()
+        return footer
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        guard shouldShowLoadMoreIndicator else {
+            return .zero
+        }
+        return CGSize(width: collectionView.frame.width, height: 100)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let bounds = UIScreen.main.bounds
         let width = (bounds.width-30)/2
@@ -86,8 +105,15 @@ extension RMCharacterListViewModel: UICollectionViewDataSource, UICollectionView
 // MARK: - ScrollView
 extension RMCharacterListViewModel: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard shouldShowLoadMoreIndicator else {
+        guard shouldShowLoadMoreIndicator, !isLoadingMoreCharacters else {
             return
+        }
+        let offset = scrollView.contentOffset.y
+        let totalContentHeight = scrollView.contentSize.height
+        let totalScrollViewFixedHeight = scrollView.frame.size.height
+        
+        if offset >= (totalContentHeight - totalScrollViewFixedHeight - 120) {
+            fetchAdditionalCharacters()
         }
     }
 }
