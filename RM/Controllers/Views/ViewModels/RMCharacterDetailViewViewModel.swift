@@ -15,7 +15,23 @@ final class RMCharacterDetailViewViewModel {
         character.name.uppercased()
     }
     
+    public var species: String {
+        character.species
+    }
+    
+    private var imageUrl: URL? {
+        URL(string: character.image)
+    }
+    
     init(character: RMCharacter) {
         self.character = character
+    }
+    
+    public func fetchImage(completion: @escaping (Result<Data, Error>) -> Void) {
+        guard let imageUrl = imageUrl else {
+            completion(.failure(URLError(.badURL)))
+            return
+        }
+        RMImageLoader.shared.downloadImage(imageUrl, completion: completion)
     }
 }
